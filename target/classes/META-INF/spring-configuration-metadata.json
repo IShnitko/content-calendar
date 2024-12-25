@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "cc",
+      "type": "dev.danvega.contentcalendar.config.ContentCalendarProperties",
+      "sourceType": "dev.danvega.contentcalendar.config.ContentCalendarProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cc.about",
+      "type": "java.lang.String",
+      "sourceType": "dev.danvega.contentcalendar.config.ContentCalendarProperties"
+    },
+    {
+      "name": "cc.welcome-message",
+      "type": "java.lang.String",
+      "sourceType": "dev.danvega.contentcalendar.config.ContentCalendarProperties"
+    }
+  ],
+  "hints": []
+}
