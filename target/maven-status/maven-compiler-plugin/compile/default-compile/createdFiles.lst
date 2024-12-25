@@ -1,0 +1,13 @@
+dev\danvega\contentcalendar\model\Content.class
+dev\danvega\contentcalendar\model\Type.class
+dev\danvega\contentcalendar\config\ContentCalendarProperties.class
+dev\danvega\contentcalendar\repository\ContentJdbcTemplateRepository.class
+dev\danvega\contentcalendar\controller\ContentController.class
+dev\danvega\contentcalendar\model\Status.class
+META-INF\spring-configuration-metadata.json
+dev\danvega\contentcalendar\repository\ContentRepository.class
+dev\danvega\contentcalendar\config\DataLoader$1.class
+dev\danvega\contentcalendar\repository\ContentCollectionRepository.class
+dev\danvega\contentcalendar\controller\HomeController.class
+dev\danvega\contentcalendar\Application.class
+dev\danvega\contentcalendar\config\DataLoader.class
