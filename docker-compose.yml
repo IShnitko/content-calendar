@@ -1,32 +1,33 @@
-version: '3.8'
+version: '3.9'
 services:
   app:
-    build: .
-    container_name: spring-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080" # Map the container's port 8080 to your local machine's port 8080
-    environment: # Define environment variables for production
-      SPRING_PROFILES_ACTIVE: production
-      PGHOST: postgres # Reference the PostgreSQL container name as the host
-      PGPORT: 5432
-      PGDATABASE: productiondb
-      PGUSER: productionuser
-      PGPASSWORD: productionpassword
+      - "8080:8080"
     depends_on:
-      - postgres # Ensure the PostgreSQL container is started before the app
-
-  postgres:
-    image: postgres:15-alpine
-    container_name: postgres-db
-    restart: always # Automatically restart the database container if it stops
+      - db
     environment:
-      POSTGRES_USER: productionuser
-      POSTGRES_PASSWORD: productionpassword
-      POSTGRES_DB: productiondb
+#      SPRING_PROFILES_ACTIVE: production
+      PGHOST: db
+      PGPORT: 5432
+      PGDATABASE: content_calendar
+      PGUSER: postgres
+      PGPASSWORD: password
+
+  db:
+    image: postgres:15-alpine
+    container_name: postgres_container
     ports:
-      - "5432:5432" # Map PostgreSQL's port 5432 to the host machine
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: content_calendar
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
     volumes:
-      - postgres_data:/var/lib/postgresql/data # Persist data in a Docker volume
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
 volumes:
-  postgres_data: # Volume for persisting PostgreSQL data
+  postgres_data:
