@@ -9,8 +9,8 @@ services:
     depends_on:
       - db
     environment:
-#      SPRING_PROFILES_ACTIVE: production
-      PGHOST: db
+      SPRING_PROFILES_ACTIVE: production
+      PGHOST: localhost
       PGPORT: 5432
       PGDATABASE: content_calendar
       PGUSER: postgres
